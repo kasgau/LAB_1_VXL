@@ -8,7 +8,7 @@
 
 #include "EX2.h"
 int led_status = 0;
-int count = 5;
+int count = 6;
 void EX2_Run()
 {
 	switch(led_status)
@@ -37,7 +37,7 @@ void EX2_Run()
 	    		 HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, RESET);
 	    		 HAL_GPIO_WritePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin, SET);
 	    		 HAL_GPIO_WritePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin, SET);
-	    		 count = 5;
+	    		 count = 6;
 	    		 led_status = 0;
 	    	 }
 	       break;

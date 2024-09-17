@@ -82,7 +82,7 @@ Disassembly of section .text:
 
 #include "EX2.h"
 int led_status = 0;
-int count = 5;
+int count = 6;
 void EX2_Run()
 {
  800014c:	b580      	push	{r7, lr}
@@ -197,9 +197,9 @@ void EX2_Run()
  800020a:	2180      	movs	r1, #128	@ 0x80
  800020c:	4822      	ldr	r0, [pc, #136]	@ (8000298 <EX2_Run+0x14c>)
  800020e:	f000 fc4d 	bl	8000aac <HAL_GPIO_WritePin>
-	    		 count = 5;
+	    		 count = 6;
  8000212:	4b22      	ldr	r3, [pc, #136]	@ (800029c <EX2_Run+0x150>)
- 8000214:	2205      	movs	r2, #5
+ 8000214:	2206      	movs	r2, #6
  8000216:	601a      	str	r2, [r3, #0]
 	    		 led_status = 0;
  8000218:	4b1e      	ldr	r3, [pc, #120]	@ (8000294 <EX2_Run+0x148>)
@@ -327,8 +327,8 @@ int main(void)
     /* USER CODE END WHILE */
 	  EX2_Run();
  80002b0:	f7ff ff4c 	bl	800014c <EX2_Run>
-	  HAL_Delay(1130);
- 80002b4:	f240 406a 	movw	r0, #1130	@ 0x46a
+	  HAL_Delay(1000);
+ 80002b4:	f44f 707a 	mov.w	r0, #1000	@ 0x3e8
  80002b8:	f000 f974 	bl	80005a4 <HAL_Delay>
 	  EX2_Run();
  80002bc:	bf00      	nop
