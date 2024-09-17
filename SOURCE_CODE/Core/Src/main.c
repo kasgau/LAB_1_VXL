@@ -17,7 +17,7 @@
   */
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
-#include <EX.h>
+#include "EX3.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -95,7 +95,8 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-
+	  EX3_Run();
+	  HAL_Delay(1200);
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
