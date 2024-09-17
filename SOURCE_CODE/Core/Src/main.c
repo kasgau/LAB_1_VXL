@@ -17,7 +17,7 @@
   */
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
-#include <EX.h>
+#include "EX5.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -92,10 +92,14 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+  int counter =9;
   while (1)
   {
     /* USER CODE END WHILE */
-
+	  EX3_Run();
+	  if(counter <=0) counter=9;
+	  display7SEG(counter--);
+	  HAL_Delay(1000);
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
@@ -153,15 +157,21 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOB_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOA, LED_RED_Pin|LED_YELLOW_Pin|LED_GREEN_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOA, LED_RED_Pin|LED_YELLOW_Pin|LED_GREEN_Pin|SEG_0_Pin
+                          |SEG_1_Pin|SEG_2_Pin|SEG_3_Pin|SEG_4_Pin
+                          |SEG_5_Pin|SEG_6_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOB, LED_RED_LEFT_Pin|LED_YELLOW_LEFT_Pin|LED_GREEN_LEFT_Pin|LED_YELLOW_BELOW_Pin
                           |LED_GREEN_BELOW_Pin|LED_RED_RIGHT_Pin|LED_YELLOW_RIGHT_Pin|LED_GREEN_RIGHT_Pin
                           |LED_RED_ABOVE_Pin|LED_YELLOW_ABOVE_Pin|LED_GREEN_ABOVE_Pin|LED_RED_BELOW_Pin, GPIO_PIN_RESET);
 
-  /*Configure GPIO pins : LED_RED_Pin LED_YELLOW_Pin LED_GREEN_Pin */
-  GPIO_InitStruct.Pin = LED_RED_Pin|LED_YELLOW_Pin|LED_GREEN_Pin;
+  /*Configure GPIO pins : LED_RED_Pin LED_YELLOW_Pin LED_GREEN_Pin SEG_0_Pin
+                           SEG_1_Pin SEG_2_Pin SEG_3_Pin SEG_4_Pin
+                           SEG_5_Pin SEG_6_Pin */
+  GPIO_InitStruct.Pin = LED_RED_Pin|LED_YELLOW_Pin|LED_GREEN_Pin|SEG_0_Pin
+                          |SEG_1_Pin|SEG_2_Pin|SEG_3_Pin|SEG_4_Pin
+                          |SEG_5_Pin|SEG_6_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
