@@ -8,7 +8,7 @@
 
 #include "EX2.h"
 int led_status = 0;
-int count = 6;
+int count = 5000000;
 void EX2_Run()
 {
 	switch(led_status)
@@ -17,13 +17,13 @@ void EX2_Run()
 	         HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, RESET);
 	         HAL_GPIO_WritePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin, SET);
 	         HAL_GPIO_WritePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin, SET);
-	         count--;
+	         count -= 10000;
 	    	 if(count <= 0)
 	    	 {
 	    		 HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, SET);
 	    		 HAL_GPIO_WritePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin, SET);
 	    		 HAL_GPIO_WritePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin, RESET);
-	    		 count = 3;
+	    		 count = 3000000;
 	    		 led_status = 2;
 	    	 }
 	       break;
@@ -31,13 +31,13 @@ void EX2_Run()
 	    	 HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, SET);
 	    	 HAL_GPIO_WritePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin, RESET);
 	    	 HAL_GPIO_WritePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin, SET);
-	    	 count--;
+	    	 count -= 10000;
 	    	 if(count <= 0)
 	    	 {
 	    		 HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, RESET);
 	    		 HAL_GPIO_WritePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin, SET);
 	    		 HAL_GPIO_WritePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin, SET);
-	    		 count = 6;
+	    		 count = 5000000;
 	    		 led_status = 0;
 	    	 }
 	       break;
@@ -45,13 +45,13 @@ void EX2_Run()
 	    	 HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, SET);
 	    	 HAL_GPIO_WritePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin, SET);
 	    	 HAL_GPIO_WritePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin, RESET);
-	    	 count--;
+	    	 count -= 10000;
 	    	 if(count <= 0)
 	    	 {
 	    		 HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, SET);
 	    		 HAL_GPIO_WritePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin, RESET);
 	    	     HAL_GPIO_WritePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin, SET);
-	    		 count = 2;
+	    		 count = 2000000;
 	    		 led_status = 1;
 	    	 }
 	    	 break;

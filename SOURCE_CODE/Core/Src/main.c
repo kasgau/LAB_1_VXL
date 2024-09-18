@@ -96,7 +96,7 @@ int main(void)
   {
     /* USER CODE END WHILE */
 	  EX2_Run();
-	  HAL_Delay(1000);
+	  HAL_Delay(9);
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
