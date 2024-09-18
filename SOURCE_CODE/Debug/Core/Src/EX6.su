@@ -1,0 +1,7 @@
+../Core/Src/EX6.c:12:6:clearAllClock	8	static
+../Core/Src/EX6.c:19:6:setAllClock	8	static
+../Core/Src/EX6.c:26:6:setNumberOnClock	16	static
+../Core/Src/EX6.c:72:6:EX6_run	8	static
+../Core/Src/EX6.c:81:6:clearNumberOnClock	16	static
+../Core/Src/EX6.c:128:6:EX9_run	8	static
+../Core/Src/EX6.c:148:6:EX10_run	8	static
