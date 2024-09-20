@@ -147,7 +147,7 @@ int hour_location = 0;
 
 void EX10_run()
 {
-	sec_count += 10000;
+	sec_count += 1000000;
 
 	   if(sec_count >= 5000000) // 5S
 	   {
@@ -179,7 +179,7 @@ void EX10_run()
 	   		   if( second / 5 ==0 && min_location != 11 && hour_location != 11)
 	   			   clearNumberOnClock(11);
 
-	   		   if(second / 5 != 0 && second /5 != min_location && second /5 != hour_location)
+	   		   if(second / 5 != 0 && second /5 != (min_location+1) && second /5 != (hour_location+1))
 	   			   clearNumberOnClock(second / 5 - 1);
 	   		   setNumberOnClock(second / 5);
 	   		   sec_location = (second /5);
@@ -189,12 +189,12 @@ void EX10_run()
 
 	   	if(minute % 5 == 0)
 	   		   {
-	   			   if(minute / 5 == 0 && hour_location != 11 && sec_location != 11)
+	   			   if(minute / 5 == 0 && hour_location != 11 )
 	   				   {
 	   				   clearNumberOnClock(11);
 
 	   				   }
-	   			   if(minute /5 != 0 && min_location != hour_location)
+	   			   if(minute /5 != 0 && min_location != (hour_location+1))
 	   			   {
 	   				   clearNumberOnClock(minute / 5 - 1);
 
