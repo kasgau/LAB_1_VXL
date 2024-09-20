@@ -19,7 +19,7 @@ void EX3_Run()
 	         HAL_GPIO_WritePin(GPIOB, LED_RED_ABOVE_Pin|LED_RED_BELOW_Pin| LED_YELLOW_ABOVE_Pin| LED_YELLOW_BELOW_Pin, SET);
 	         HAL_GPIO_WritePin(GPIOB, LED_YELLOW_LEFT_Pin| LED_YELLOW_RIGHT_Pin|LED_GREEN_LEFT_Pin|LED_GREEN_RIGHT_Pin, SET);
 	         count_r--;
-	         if(count_r <=2)
+	         if(count_r <=1)
 	         {
 		         HAL_GPIO_WritePin(GPIOB, LED_YELLOW_ABOVE_Pin| LED_YELLOW_BELOW_Pin| LED_RED_LEFT_Pin|LED_RED_RIGHT_Pin , RESET);
 		         HAL_GPIO_WritePin(GPIOB, LED_GREEN_ABOVE_Pin| LED_GREEN_BELOW_Pin, SET);
@@ -30,7 +30,7 @@ void EX3_Run()
 
 	     case 1: // vàng dọc + đỏ ngang
 	         count_r--;
-	         if(count_r <= 1)
+	         if(count_r <= 0)
 	         {
 		         HAL_GPIO_WritePin(GPIOB, LED_RED_ABOVE_Pin| LED_RED_BELOW_Pin| LED_GREEN_LEFT_Pin|LED_GREEN_RIGHT_Pin , RESET);
 		         HAL_GPIO_WritePin(GPIOB, LED_YELLOW_ABOVE_Pin| LED_YELLOW_BELOW_Pin |LED_RED_LEFT_Pin| LED_RED_RIGHT_Pin, SET);
@@ -41,11 +41,11 @@ void EX3_Run()
 
 	     case 2: // đỏ dọc + xanh ngang
 	         count_r--;
-	         if(count_r <= 2)
+	         if(count_r <= 1)
 	         {
 		         HAL_GPIO_WritePin(GPIOB, LED_YELLOW_LEFT_Pin|LED_YELLOW_RIGHT_Pin , RESET);
 		         HAL_GPIO_WritePin(GPIOB, LED_GREEN_LEFT_Pin| LED_GREEN_RIGHT_Pin, SET);
-	        	 led_status = 3;
+	        	 led_status = 2;
 	          }
 
 	    	 break;
@@ -62,7 +62,6 @@ void EX3_Run()
 	    	 break;
 
 	     default:
-	    	 led_status = 0;
 	    	 break;
 
 	}

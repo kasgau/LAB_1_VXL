@@ -92,12 +92,12 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  int counter =9;
+  int counter =4;
   while (1)
   {
     /* USER CODE END WHILE */
 	  EX3_Run();
-	  if(counter <=0) counter=9;
+	  if(counter <=0) counter=4;
 	  display7SEG(counter--);
 	  HAL_Delay(1000);
     /* USER CODE BEGIN 3 */
