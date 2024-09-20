@@ -81,7 +81,7 @@ Disassembly of section .text:
 0800014c <EX3_Run>:
 
 int led_status = 0;
-int count_r =4;
+int count_r =6;
 
 void EX3_Run()
 {
@@ -117,10 +117,10 @@ void EX3_Run()
  800018a:	3b01      	subs	r3, #1
  800018c:	4a39      	ldr	r2, [pc, #228]	@ (8000274 <EX3_Run+0x128>)
  800018e:	6013      	str	r3, [r2, #0]
-	         if(count_r <=1)
+	         if(count_r <=2)
  8000190:	4b38      	ldr	r3, [pc, #224]	@ (8000274 <EX3_Run+0x128>)
  8000192:	681b      	ldr	r3, [r3, #0]
- 8000194:	2b01      	cmp	r3, #1
+ 8000194:	2b02      	cmp	r3, #2
  8000196:	dc60      	bgt.n	800025a <EX3_Run+0x10e>
 	         {
 		         HAL_GPIO_WritePin(GPIOB, LED_YELLOW_ABOVE_Pin| LED_YELLOW_BELOW_Pin| LED_RED_LEFT_Pin|LED_RED_RIGHT_Pin , RESET);
@@ -169,9 +169,9 @@ void EX3_Run()
  80001e2:	4b22      	ldr	r3, [pc, #136]	@ (800026c <EX3_Run+0x120>)
  80001e4:	2202      	movs	r2, #2
  80001e6:	601a      	str	r2, [r3, #0]
-	        	 count_r = 4;
+	        	 count_r = 6;
  80001e8:	4b22      	ldr	r3, [pc, #136]	@ (8000274 <EX3_Run+0x128>)
- 80001ea:	2204      	movs	r2, #4
+ 80001ea:	2206      	movs	r2, #6
  80001ec:	601a      	str	r2, [r3, #0]
 	         }
 	       break;
@@ -184,10 +184,10 @@ void EX3_Run()
  80001f4:	3b01      	subs	r3, #1
  80001f6:	4a1f      	ldr	r2, [pc, #124]	@ (8000274 <EX3_Run+0x128>)
  80001f8:	6013      	str	r3, [r2, #0]
-	         if(count_r <= 1)
+	         if(count_r <= 2)
  80001fa:	4b1e      	ldr	r3, [pc, #120]	@ (8000274 <EX3_Run+0x128>)
  80001fc:	681b      	ldr	r3, [r3, #0]
- 80001fe:	2b01      	cmp	r3, #1
+ 80001fe:	2b02      	cmp	r3, #2
  8000200:	dc2f      	bgt.n	8000262 <EX3_Run+0x116>
 	         {
 		         HAL_GPIO_WritePin(GPIOB, LED_YELLOW_LEFT_Pin|LED_YELLOW_RIGHT_Pin , RESET);
@@ -200,9 +200,9 @@ void EX3_Run()
  800020e:	2124      	movs	r1, #36	@ 0x24
  8000210:	4817      	ldr	r0, [pc, #92]	@ (8000270 <EX3_Run+0x124>)
  8000212:	f000 fceb 	bl	8000bec <HAL_GPIO_WritePin>
-	        	 led_status = 2;
+	        	 led_status = 3;
  8000216:	4b15      	ldr	r3, [pc, #84]	@ (800026c <EX3_Run+0x120>)
- 8000218:	2202      	movs	r2, #2
+ 8000218:	2203      	movs	r2, #3
  800021a:	601a      	str	r2, [r3, #0]
 	          }
 
@@ -232,9 +232,9 @@ void EX3_Run()
  800023e:	f240 2152 	movw	r1, #594	@ 0x252
  8000242:	480b      	ldr	r0, [pc, #44]	@ (8000270 <EX3_Run+0x124>)
  8000244:	f000 fcd2 	bl	8000bec <HAL_GPIO_WritePin>
-		         count_r = 4;
+		         count_r = 6;
  8000248:	4b0a      	ldr	r3, [pc, #40]	@ (8000274 <EX3_Run+0x128>)
- 800024a:	2204      	movs	r2, #4
+ 800024a:	2206      	movs	r2, #6
  800024c:	601a      	str	r2, [r3, #0]
 	        	 led_status =0;
  800024e:	4b07      	ldr	r3, [pc, #28]	@ (800026c <EX3_Run+0x120>)
@@ -243,7 +243,7 @@ void EX3_Run()
 	         }
 	    	 break;
  8000254:	e007      	b.n	8000266 <EX3_Run+0x11a>
-
+	    	 led_status = 0;
 	     default:
 	    	 break;
  8000256:	bf00      	nop
