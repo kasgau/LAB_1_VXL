@@ -201,6 +201,7 @@ void EX10_run()
 	   			   }
 	   			   setNumberOnClock(minute / 5);
 	   			   min_location = minute / 5;
+
 	   		   }
 
 
