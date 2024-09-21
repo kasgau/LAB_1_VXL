@@ -35,7 +35,7 @@ void EX3_Run()
 		         HAL_GPIO_WritePin(GPIOB, LED_RED_ABOVE_Pin| LED_RED_BELOW_Pin| LED_GREEN_LEFT_Pin|LED_GREEN_RIGHT_Pin , RESET);
 		         HAL_GPIO_WritePin(GPIOB, LED_YELLOW_ABOVE_Pin| LED_YELLOW_BELOW_Pin |LED_RED_LEFT_Pin| LED_RED_RIGHT_Pin, SET);
 	        	 led_status = 2;
-	        	 count_r = 6;
+	        	 count_r = 5;
 	         }
 	       break;
 
@@ -56,7 +56,7 @@ void EX3_Run()
 	         {
 		         HAL_GPIO_WritePin(GPIOB, LED_GREEN_ABOVE_Pin|LED_GREEN_BELOW_Pin|LED_RED_LEFT_Pin| LED_RED_RIGHT_Pin, RESET);
 		         HAL_GPIO_WritePin(GPIOB, LED_RED_ABOVE_Pin| LED_RED_BELOW_Pin|LED_YELLOW_LEFT_Pin|LED_YELLOW_RIGHT_Pin, SET);
-		         count_r = 6;
+		         count_r = 5;
 	        	 led_status =0;
 	         }
 	    	 break;
