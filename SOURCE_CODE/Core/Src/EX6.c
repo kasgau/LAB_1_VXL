@@ -147,7 +147,7 @@ int hour_location = 0;
 
 void EX10_run()
 {
-	sec_count += 1000000;
+	sec_count += 10000;
 
 	   if(sec_count >= 5000000) // 5S
 	   {
